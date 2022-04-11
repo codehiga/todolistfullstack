@@ -7,7 +7,7 @@ function App(){
   const [ title, setTitle ] = React.useState();
   const [ description, setDescription ] = React.useState();
 
-  const url = "http://localhost:3005"
+  const url = "https://fathomless-wave-70789.herokuapp.com"
 
   const fetcher = (...args) => fetch(...args).then(res => res.json())
 

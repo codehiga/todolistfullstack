@@ -65,6 +65,6 @@ app.put('/change-status', async (req, res) => {
 
 
 
-app.listen(port, () => {
+app.listen(port || process.env.PORT , () => {
   console.log(`Servidor ouvindo na porta: ${port}`)
 })

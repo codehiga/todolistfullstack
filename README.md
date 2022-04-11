@@ -1,4 +1,4 @@
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d8e7b942-6efc-4417-82be-0803d354875f/Untitled.png)
+![Untitled](https://repository-images.githubusercontent.com/255075959/d1620780-02b9-11eb-9405-e4e95f728525)
 
 **`Objetivo com a criação do projeto:`**
 

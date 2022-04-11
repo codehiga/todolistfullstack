@@ -46,7 +46,7 @@ app.put('/change-status', async (req, res) => {
       },
     })
 
-    console.log(updateUser)
+    res.send(updateUser)
     return;
 
   }
@@ -60,7 +60,7 @@ app.put('/change-status', async (req, res) => {
     },
   })
 
-  console.log(updateUser)
+  res.send(updateUser)
 })
 
 

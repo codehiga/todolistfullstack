@@ -32,4 +32,4 @@
 
 **[https://github.com/codehiga/todolistfullstack/](https://github.com/codehiga/todolistfullstack/)**
 
-**Ou** clone meu repositório com o comando **`git clone https://github.com/codehiga/spotifyclone.git`** em seguida, dentro da pasta onde o projeto foi clonado utilize o comando **`npm install ou yarn`** !
+**Ou** clone meu repositório com o comando **`git clone https://github.com/codehiga/todolistfullstack/`** em seguida, dentro da pasta onde o projeto foi clonado utilize o comando **`npm install ou yarn`** !

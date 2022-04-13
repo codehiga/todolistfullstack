@@ -1,4 +1,4 @@
-![Untitled](https://repository-images.githubusercontent.com/255075959/d1620780-02b9-11eb-9405-e4e95f728525)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d8e7b942-6efc-4417-82be-0803d354875f/Untitled.png)
 
 **`Objetivo com a criação do projeto:`**
 
@@ -14,6 +14,8 @@
 
 `Objetivos da aplicação:`
 
-- Persistir dados em um banco de dados PostgreeSQL.
+- Persistir dados em um banco de dados **PostgreeSQL**.
 - CRUD de tarefas.
-- Criar uma página especifica para cada tarefa
+- Criar uma página especifica para cada tarefa.
+- Finalizar tarefa.
+- Organizar por categoria.

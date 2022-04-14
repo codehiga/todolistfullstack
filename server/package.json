@@ -11,9 +11,6 @@
     "prisma": "^3.12.0"
   },
   "scripts": {
-    "start": "nodemon index.js"
-  },
-  "engines" : {
-    "node" : "12.x"
+    "dev": "node index.js"
   }
 }

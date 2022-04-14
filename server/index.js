@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('API by Higa!')
 })
 
 app.get('/tasks', async (req, res) => {
@@ -48,7 +48,6 @@ app.put('/change-status', async (req, res) => {
 
     res.send(updateUser)
     return;
-
   }
 
   const updateUser = await prisma.TaskModel.update({
@@ -60,11 +59,11 @@ app.put('/change-status', async (req, res) => {
     },
   })
 
-  res.send(updateUser)
+  res.send(updateUser);
 })
 
 
 
-app.listen(process.env.PORT || port , () => {
-  console.log(`Servidor ouvindo na porta: ${process.env.PORTawasaws}`)
+app.listen(port || process.env.PORT , () => {
+  console.log(`Servidor ouvindo na porta: ${port}`)
 })

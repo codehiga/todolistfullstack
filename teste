@@ -1,0 +1,6 @@
+var msg = "senha do facebook 1999";
+
+var firstEnc = btoa(msg)
+var secEnc = atob(msg)
+
+console.log(secEnc)

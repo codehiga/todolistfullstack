@@ -9,15 +9,21 @@ export const CrudProvider = ({children}) => {
   const [ categoriesWithTasks, setCategoriesWithTasks ] = useState();
   const [ red, setRed ] = useState(false);
 
+  const [ loading, setLoading ] = useState(false);
+
   const baseURL = 'https://todolistapi-devhiga.herokuapp.com';
 
 
   async function redeemTasks(){
 
+    setLoading(true);
+
     axios.get(`${baseURL}/tasks`)
     .then(({data}) => {
       setTasks(data);
       filterCategories(data);
+
+      setLoading(false);
     })
   }
 
@@ -91,6 +97,8 @@ export const CrudProvider = ({children}) => {
     })
 
   }
+
+  if(loading && !categoriesWithTasks) return <h1>Loading!</h1>
 
   return(
     <CrudContext.Provider value={{

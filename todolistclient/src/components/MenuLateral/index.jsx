@@ -8,15 +8,14 @@ function MenuLateral() {
   const { actualCategory, setActualCategory, categoriesWithTasks, redeemTasks } = useCrudContext();
 
   useEffect(() => {
-    redeemTasks();
+    if(!categoriesWithTasks) redeemTasks();
   }, [])
 
-  if(!categoriesWithTasks) return <h1>Carregando</h1>
 
   return(
     <MenuContainer>
         <MenuWrapper>
-          <ul>{categoriesWithTasks.map((category) => {
+          <ul>{categoriesWithTasks?.map((category) => {
             return <li 
             onClick={(e) => {
               setActualCategory(category.title)

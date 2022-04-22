@@ -4,17 +4,19 @@ import { CrudProvider } from "./contexts/CrudContex"
 
 import { AppRoutes } from "./routes"
 
-import { Container } from "./styles/appStyles"
+import { Container, Wrapper } from "./styles/appStyles"
 
 export const App = () => {
   return(
     <Container>
-      <CrudProvider>
-        <MenuLateral />
-        <BrowserRouter>
-          <AppRoutes />
-        </BrowserRouter>
-      </CrudProvider>
+      <Wrapper>
+        <CrudProvider>
+          <MenuLateral />
+          <BrowserRouter>
+            <AppRoutes />
+          </BrowserRouter>
+        </CrudProvider>
+      </Wrapper>
     </Container>
   )
 } 

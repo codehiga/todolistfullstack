@@ -8,8 +8,7 @@ import { Container, TaskCompletedBall, TaskContainer, TaskTitle, Wrapper, TaskAc
 export const Home = () => {
 
   const { 
-    redeemTasks, 
-    tasks, 
+    redeemTasks,
     actualCategory, 
     categoriesWithTasks, 
     handleChangeTaskStatus,
@@ -19,12 +18,9 @@ export const Home = () => {
 
   // Carrega as tasks!
   useEffect(() => {
-    if(!tasks) redeemTasks();
+    if(!categoriesWithTasks) redeemTasks();
   }, [])
 
-  if(!categoriesWithTasks){
-    return <h1>Carregando</h1>
-  }
 
   function convertDateToBR(date){
     var newDate = new Date(date);
@@ -40,7 +36,7 @@ export const Home = () => {
 
         <AddTask categoriesWithTasks={categoriesWithTasks} />
 
-        { categoriesWithTasks.map((cat) => {
+        { categoriesWithTasks?.map((cat) => {
           if(cat.title === actualCategory){
 
             if(cat.thisCategoryTasks.length > 0){
@@ -63,7 +59,7 @@ export const Home = () => {
 
                     <TaskActions>
                       <Link to={`/task/${task.id}`}>Visualizar</Link>
-                      <b onClick={() => {handleDeleteTask(task.id)}}>Delete</b>
+                      <b onClick={() => { handleDeleteTask(task.id) }}>Delete</b>
                     </TaskActions>
                   </TaskContainer>
                 )

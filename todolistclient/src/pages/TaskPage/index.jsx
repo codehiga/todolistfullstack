@@ -11,8 +11,6 @@ function TaskPage() {
 
   const [ editMode, setEditMode ] = useState(false);
 
-  const { mutate } = useSWRConfig();
-
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR(`${baseURL}/uniquetask/${id}`, fetcher);
 
@@ -91,10 +89,10 @@ function TaskPage() {
         return;
       }
 
-      // if(taskStatus !== data.done){
-      //   dataBuild();
-      //   return;
-      // }
+      if(taskStatus !== data.done){
+        dataBuild();
+        return;
+      }
 
       if(newCategoryRef.current.value !== data.category){
         dataBuild();
@@ -122,6 +120,7 @@ function TaskPage() {
 
         {editMode === true && <button onClick={() => { 
           taskStatus === false ? setTaskStatus(true) : setTaskStatus(false)
+          console.log(taskStatus)
           }}
         > Alterar</button>} </b>
 

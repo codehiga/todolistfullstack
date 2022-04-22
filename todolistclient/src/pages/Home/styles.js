@@ -3,7 +3,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  max-width: calc(100% - 300px);
+  @media (min-width: 1024px){
+    max-width: calc(100% - 300px);
+  }
   display: flex;
   justify-content: center;
 `;
@@ -81,6 +83,17 @@ export const TaskCompletedBall = styled.span`
 
 export const TaskActions = styled.div`
   display: flex;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
   gap: 10px;
+  flex-direction: column;
+  cursor: pointer;
+  color: #fff;
+  
+  a{
+    text-decoration: none;
+  }
+
+  > b {
+  }
 ` 

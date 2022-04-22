@@ -1,11 +1,10 @@
 import React, { useRef } from 'react';
 import { useCrudContext } from '../../hooks/useCrudContext.js';
-import MenuLateral from '../MenuLateral'
 import { Container, Wrapper } from './styles.js';
 
 function AddTask({categoriesWithTasks}) {
 
-  const { handleCreateNewTask, setActualCategory } = useCrudContext();
+  const { handleCreateNewTask, setActualCategory, actualCategory } = useCrudContext();
 
   const titleRef = useRef('');
   const catRef = useRef('');
@@ -13,7 +12,8 @@ function AddTask({categoriesWithTasks}) {
 
   function taskBuilder(){
 
-    if(titleRef.current.value === '' || catRef.current.value === 'Selecione uma categoria' || dateRef.current.value === '') return;
+    if(titleRef.current.value === '' || dateRef.current.value === '') return;
+    if(catRef.current.value === 'Selecione uma categoria') catRef.current.value = actualCategory;
 
     const dateConverted = new Date(dateRef.current.value);
 
@@ -42,8 +42,9 @@ function AddTask({categoriesWithTasks}) {
         <span>
           <input ref={titleRef} type="text" placeholder='Tarefa' />
           <select ref={catRef}>
-            <option selected defaultValue="Selecione uma categoria" disabled>Selecione uma categoria</option>
-            { categoriesWithTasks.map((cat) => {
+            <option defaultChecked="Selecione uma categoria" defaultValue="Selecione uma categoria" disabled>Selecione uma categoria</option>
+            
+            { categoriesWithTasks?.map((cat) => {
               return <option key={cat.title} defaultValue={cat.title}>{cat.title}</option>
             }) }
           </select>

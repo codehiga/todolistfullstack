@@ -30,6 +30,6 @@
 
 **Acesse o projeto a partir desse link:**
 
-**[https://github.com/codehiga/todolistfullstack/](https://github.com/codehiga/todolistfullstack/)**
+**[https://todolistfullstack.devhiga.tech/](https://todolistfullstack.devhiga.tech/)**
 
 **Ou** clone meu repositório com o comando **`git clone https://github.com/codehiga/todolistfullstack/`** em seguida, dentro da pasta onde o projeto foi clonado utilize o comando **`npm install ou yarn`** !

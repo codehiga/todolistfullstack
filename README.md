@@ -1,4 +1,4 @@
-![alt text](https://firebasestorage.googleapis.com/v0/b/utilitiescodehiga.appspot.com/o/files%2Fcapa.jpg?alt=media&token=e5522ce7-6055-4cc1-9eae-ebd5c63c450c)
+![alt text](https://github.com/codehiga/todolistfullstack/blob/main/capa.jpg)
 
 **`Objetivo com a criação do projeto:`**
 

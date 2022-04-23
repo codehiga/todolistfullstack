@@ -113,10 +113,10 @@ function TaskPage() {
     <Container>
       <Link to="/">Voltar</Link>
       <Wrapper>
-      <h1>{ editMode === false ? data.title : <input ref={newTitleRef} defaultValue={data.title} /> } || id: {id}</h1> 
-        <b>{ editMode === false ? data.category : <input ref={newCategoryRef} defaultValue={data.category} /> }</b> 
+      <h1>{ editMode === false ? data.title : <input ref={newTitleRef} defaultValue={data.title} /> }</h1> 
+        <b>Categoria: { editMode === false ? data.category : <input ref={newCategoryRef} defaultValue={data.category} /> }</b> 
 
-        <b>{taskStatus === true ? 'Finalizado' : 'Nao finalizado'} 
+        <b>Status: {taskStatus === true ? 'Finalizado' : 'Nao finalizado'} 
 
         {editMode === true && <button onClick={() => { 
           taskStatus === false ? setTaskStatus(true) : setTaskStatus(false)

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   @media (min-width: 1024px){
     max-width: calc(100% - 300px);
   }
@@ -18,7 +18,16 @@ export const Wrapper = styled.div`
   padding: 15px;
   display: flex;
   flex-direction: column;
+  
+  background-color: #EEEEEE;
+`
+
+export const AllTasksContainer = styled.div`
+  width: 100%;
   gap: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 `
 
 
@@ -29,10 +38,10 @@ export const TaskContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 10px;
-  background-color: #999;
+  padding: 15px;
+  background-color: #fff;
   
-  border-radius: 15.5px 0 0 15.5px;
+  border-radius: 15px;
 `
 
 export const TaskTitle = styled.span`
@@ -62,9 +71,9 @@ export const TaskInfo = styled.div`
 `
 
 export const TaskCompletedBall = styled.span`
-  width: 50px;
-  height: 100%;
-  border-radius: 15px 0 0 15px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
   ${props => props.done ?
   {
     background: 'green',
@@ -78,14 +87,14 @@ export const TaskCompletedBall = styled.span`
     filter: brightness(0.5);
   }
   position: absolute;
-  left: -1px;
+  left: 15px;
 `
 
 export const TaskActions = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 10px;
+  gap: 5px;
   flex-direction: column;
   cursor: pointer;
   color: #fff;

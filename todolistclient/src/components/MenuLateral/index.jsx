@@ -14,6 +14,7 @@ function MenuLateral() {
 
   return(
     <MenuContainer>
+      <h4>TodoList FullStack</h4>
         <MenuWrapper>
           <ul>{categoriesWithTasks?.map((category) => {
             return <li 

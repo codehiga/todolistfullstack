@@ -8,9 +8,18 @@ export const MenuContainer = styled.div`
   min-height: 300px;
   max-width: 300px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: blue;
+  flex-direction: column;
+
+  padding: 20px 0;
+
+  background-color: #fff;
+
+  > h4 {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
 `
 
 export const MenuWrapper = styled.div`
@@ -35,7 +44,9 @@ export const MenuWrapper = styled.div`
       }
 
       &.active {
-        background-color: red;
+        background-color: #222;
+        color:#fff;
+        font-weight: bolder;
         transition: 0.5s;
       }
     }

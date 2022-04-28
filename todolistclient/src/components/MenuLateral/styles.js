@@ -24,13 +24,8 @@ export const MenuContainer = styled.div`
 
 export const MenuWrapper = styled.div`
   width: 100%;
-<<<<<<< HEAD
   height: 100%;
   background-color: #222;
-=======
-  height: auto;
-  
->>>>>>> ed7ff8b03bb6ce30ef3234045417f5735b22962d
   > ul {
     list-style: none;
     padding: 10px;
@@ -49,14 +44,8 @@ export const MenuWrapper = styled.div`
       }
 
       &.active {
-<<<<<<< HEAD
         background-color: black;
         color: #fff;
-=======
-        background-color: #222;
-        color:#fff;
-        font-weight: bolder;
->>>>>>> ed7ff8b03bb6ce30ef3234045417f5735b22962d
         transition: 0.5s;
       }
     }

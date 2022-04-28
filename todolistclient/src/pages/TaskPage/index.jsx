@@ -11,8 +11,6 @@ function TaskPage() {
 
   const [ editMode, setEditMode ] = useState(false);
 
-  const { mutate } = useSWRConfig();
-
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR(`${baseURL}/uniquetask/${id}`, fetcher);
 
@@ -91,10 +89,10 @@ function TaskPage() {
         return;
       }
 
-      // if(taskStatus !== data.done){
-      //   dataBuild();
-      //   return;
-      // }
+      if(taskStatus !== data.done){
+        dataBuild();
+        return;
+      }
 
       if(newCategoryRef.current.value !== data.category){
         dataBuild();
@@ -115,13 +113,14 @@ function TaskPage() {
     <Container>
       <Link to="/">Voltar</Link>
       <Wrapper>
-      <h1>{ editMode === false ? data.title : <input ref={newTitleRef} defaultValue={data.title} /> } || id: {id}</h1> 
-        <b>{ editMode === false ? data.category : <input ref={newCategoryRef} defaultValue={data.category} /> }</b> 
+      <h1>{ editMode === false ? data.title : <input ref={newTitleRef} defaultValue={data.title} /> }</h1> 
+        <b>Categoria: { editMode === false ? data.category : <input ref={newCategoryRef} defaultValue={data.category} /> }</b> 
 
-        <b>{taskStatus === true ? 'Finalizado' : 'Nao finalizado'} 
+        <b>Status: {taskStatus === true ? 'Finalizado' : 'Nao finalizado'} 
 
         {editMode === true && <button onClick={() => { 
           taskStatus === false ? setTaskStatus(true) : setTaskStatus(false)
+          console.log(taskStatus)
           }}
         > Alterar</button>} </b>
 

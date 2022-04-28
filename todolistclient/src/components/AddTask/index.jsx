@@ -1,11 +1,10 @@
 import React, { useRef } from 'react';
 import { useCrudContext } from '../../hooks/useCrudContext.js';
-import MenuLateral from '../MenuLateral'
 import { Container, Wrapper } from './styles.js';
 
 function AddTask({categoriesWithTasks}) {
 
-  const { handleCreateNewTask, setActualCategory } = useCrudContext();
+  const { handleCreateNewTask, setActualCategory, actualCategory } = useCrudContext();
 
   const titleRef = useRef('');
   const catRef = useRef('');
@@ -13,7 +12,8 @@ function AddTask({categoriesWithTasks}) {
 
   function taskBuilder(){
 
-    if(titleRef.current.value === '' || catRef.current.value === 'Selecione uma categoria' || dateRef.current.value === '') return;
+    if(titleRef.current.value === '' || dateRef.current.value === '') return;
+    if(catRef.current.value === 'Selecione uma categoria') catRef.current.value = actualCategory;
 
     const dateConverted = new Date(dateRef.current.value);
 
@@ -30,10 +30,14 @@ function AddTask({categoriesWithTasks}) {
     setActualCategory(catRef.current.value);
 
     titleRef.current.value = '';
-    catRef.current.value = 'Selecione uma categoria';
+    catRef.current.value = '0';
     dateRef.current.value = '';
 
     titleRef.current.focus();
+  }
+
+  function formatDate() {
+    return `${new Date(Date.now()).getFullYear()}-0${new Date(Date.now()).getMonth() + 1}-${new Date(Date.now()).getDate() + 1}`
   }
 
   return(
@@ -41,14 +45,15 @@ function AddTask({categoriesWithTasks}) {
       <Wrapper>
         <span>
           <input ref={titleRef} type="text" placeholder='Tarefa' />
-          <select ref={catRef}>
-            <option selected defaultValue="Selecione uma categoria" disabled>Selecione uma categoria</option>
-            { categoriesWithTasks.map((cat) => {
+          <select defaultValue="0" ref={catRef}>
+            <option value="0" disabled>Selecione uma categoria</option>
+            
+            { categoriesWithTasks?.map((cat) => {
               return <option key={cat.title} defaultValue={cat.title}>{cat.title}</option>
             }) }
           </select>
         </span>
-        <input ref={dateRef} type="date" />
+        <input defaultValue={formatDate()} ref={dateRef} type="date" />
         <button onClick={() => {taskBuilder()}}>Criar</button>
       </Wrapper>
     </Container>

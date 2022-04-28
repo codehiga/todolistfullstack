@@ -12,7 +12,7 @@ export const MenuContainer = styled.div`
 export const MenuWrapper = styled.div`
   width: 100%;
   height: 100%;
-  background-color: blue;
+  background-color: #222;
   > ul {
     list-style: none;
     padding: 10px;
@@ -25,7 +25,8 @@ export const MenuWrapper = styled.div`
       border-radius: 10px;
       transition: 0.5s;
       &.active {
-        background-color: red;
+        background-color: black;
+        color: #fff;
         transition: 0.5s;
       }
     }

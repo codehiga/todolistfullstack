@@ -16,8 +16,6 @@ export const Home = () => {
     handleDeleteTask,
   } = useCrudContext();
 
-
-  // Carrega as tasks!
   useEffect(() => {
     if(!tasks) redeemTasks();
   }, [])

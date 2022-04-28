@@ -11,7 +11,6 @@ export const CrudProvider = ({children}) => {
 
   const baseURL = 'https://todolistapi-devhiga.herokuapp.com';
 
-
   async function redeemTasks(){
 
     axios.get(`${baseURL}/tasks`)
@@ -53,6 +52,7 @@ export const CrudProvider = ({children}) => {
 
     if(status === 200){
       redeemTasks();
+      return;
     }
   }
 
